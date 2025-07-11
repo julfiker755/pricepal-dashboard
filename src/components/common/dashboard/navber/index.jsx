@@ -1,8 +1,10 @@
+import { useTitle } from "@/components/context/title";
 import {Menu } from "lucide-react";
 import Image from 'next/image';
 
 
 export default function Navber({ sidebarOpen, setSidebarOpen }) {
+  const {title} = useTitle();
   return (
     <div className="sticky top-0  flex w-full bg-[white] py-3 shadow-xs">
       <header className="w-full px-3">
@@ -20,7 +22,7 @@ export default function Navber({ sidebarOpen, setSidebarOpen }) {
               <Menu className="cursor-pointer" size={20} />
             </button>
             <ul className="hidden lg:block">
-              <li className="text-2xl font-bold text-black1">Dashboard</li>
+              <li className="text-2xl font-bold text-black1">{title}</li>
             </ul>
           </div>
           {/* right side */}

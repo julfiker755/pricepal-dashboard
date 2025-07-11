@@ -1,16 +1,13 @@
 "use client";
-
 import {
-    LineChart,
-    Line,
+    AreaChart,
+    Area,
     XAxis,
     YAxis,
     CartesianGrid,
     Tooltip,
     ResponsiveContainer,
-    Area,
-    AreaChart,
-    Legend
+    Legend,
 } from "recharts";
 
 const BookingStatictis = () => {
@@ -23,11 +20,12 @@ const BookingStatictis = () => {
         { name: "Thu", value: 45 },
         { name: "Fri", value: 85 },
     ];
+
     return (
-        <div>
-            <h2 className="text-xl font-bold mb-3">Booking Statictis</h2>
-            <div className="bg-white p-6 rounded-2xl mx-auto shadow-sm">
-                <ResponsiveContainer width={800} height={500}>
+        <div className="w-full">
+            <h2 className="text-xl font-bold mb-3">Booking Statistics</h2>
+            <div className="bg-white p-4 md:p-6 rounded-2xl shadow-sm w-full h-[300px] sm:h-[400px] md:h-[500px]">
+                <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={data}>
                         <defs>
                             <linearGradient id="colorGreen" x1="0" y1="0" x2="0" y2="1">
