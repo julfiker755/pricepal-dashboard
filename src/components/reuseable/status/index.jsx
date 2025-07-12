@@ -1,3 +1,6 @@
+import { cn } from "@/lib/utils";
+
+// StatusBadge
 
 const statusStyle = {
     Available:"bg-primary text-white",
@@ -20,7 +23,7 @@ export const StatusBadge = ({ status }) => {
     );
 };
 
-// Completed
+//OrderBadge
 
 const statusStyles = {
     Pending: "bg-[#007AFF] text-white",
@@ -38,3 +41,6 @@ export default function OrderBadge({ status }) {
         </div>
     );
 }
+
+
+
