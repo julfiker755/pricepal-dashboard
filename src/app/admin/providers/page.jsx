@@ -1,4 +1,6 @@
 "use client"
+import AddProvider from '@/components/common/admin/add-provider'
+import Modal from '@/components/reuseable/modal'
 import NavTitle from '@/components/reuseable/nav-title'
 import ProviderCard from '@/components/reuseable/provider-card'
 import SearchBox from '@/components/reuseable/start-card/search-box'
@@ -7,16 +9,17 @@ import { Funnel, Plus } from 'lucide-react'
 import React, { useState } from 'react'
 
 export default function Providers() {
-    const [isFilter,setIsFilter]=useState(false)
+  const [isFilter, setIsFilter] = useState(false)
+  const [isAdd, setIsAdd] = useState(false)
   return (
     <div>
-        <NavTitle title={"Manage providers"} subTitle={"You can manage all of your services from here."}></NavTitle>
-        <ul className="flex items-center flex-wrap justify-between pb-8">
+      <NavTitle title={"Manage providers"} subTitle={"You can manage all of your services from here."}></NavTitle>
+      <ul className="flex items-center flex-wrap justify-between pb-8">
         <li className="w-full lg:w-[400px] mb-3 md:mb-0">
           <SearchBox />
         </li>
         <li className="flex gap-4">
-          <Button onClick={() => setIsOpen(!isOpen)} className="bg-primary rounded-sm h-full w-fit py-[10px] hover:bg-primary cursor-pointer">
+          <Button onClick={() => setIsAdd(!isAdd)} className="bg-primary rounded-sm h-full w-fit py-[10px] hover:bg-primary cursor-pointer">
             <Plus size={18} className="mr-1" />
             Add provider
           </Button>
@@ -46,15 +49,19 @@ export default function Providers() {
 
         </li>
       </ul>
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
-         <ProviderCard />
-         <ProviderCard />
-         <ProviderCard />
-         <ProviderCard />
-         <ProviderCard />
-         <ProviderCard />
-         <ProviderCard />
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-3'>
+        <ProviderCard />
+        <ProviderCard />
+        <ProviderCard />
+        <ProviderCard />
+        <ProviderCard />
+        <ProviderCard />
+        <ProviderCard />
       </div>
+      {/* Add Provider */}
+      <Modal open={isAdd} setIsOpen={setIsAdd} className={"p-2"}>
+         <AddProvider/>
+      </Modal>
     </div>
   )
 }

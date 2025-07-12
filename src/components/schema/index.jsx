@@ -29,6 +29,20 @@ export const authSchema = z
    email: z.string().nonempty("Email is required"),
    password: z.string().nonempty("Password is required"),
   })
+export const providerASchema = z
+  .object({
+    provider: z.string().nonempty("Provider is required"),
+    city: z.string().nonempty("City is required"),
+    state: z.string().nonempty("State is required"),
+    email: z.string().nonempty("Email is required"),
+    password: z.string().nonempty("Password is required"),
+  })
+export const chnageASchema = z
+  .object({
+    name: z.string().nonempty("User Name is required"),
+    password: z.string().nonempty("Email is required"),
+   
+  })
 
 
   export const emailSchema = z.object({
