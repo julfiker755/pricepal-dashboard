@@ -5,9 +5,6 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-export const PlaceholderImg = (
-  width,
-  height
-) => {
-  return `https://placehold.co/${width}x${height}.png`;
+export const PlaceholderImg = () => {
+  return `https://placehold.co/400x400.png`;
 };

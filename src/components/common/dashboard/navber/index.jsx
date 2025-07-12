@@ -1,6 +1,7 @@
 import { useTitle } from "@/components/context/title";
 import {Menu } from "lucide-react";
 import Image from 'next/image';
+import Link from "next/link";
 
 
 export default function Navber({ sidebarOpen, setSidebarOpen }) {
@@ -31,10 +32,13 @@ export default function Navber({ sidebarOpen, setSidebarOpen }) {
               <div className="relative cursor-pointer flex items-center">
                 <Image src="/assets/bell.png" alt="Notification Icon" width={50} height={50} />
               </div>
+              <Link href={"/company/profile"}>
               <div className="relative flex items-center gap-2 rounded-full cursor-pointer">
                 <Image src="/assets/user.png" alt="User Icon" width={50} height={50} />
                 <span className="text-[#000000] text-xl font-medium">Brian F.</span>
               </div>
+              </Link>
+             
             </div>
           </div>
         </div>

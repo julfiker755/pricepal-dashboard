@@ -1,11 +1,18 @@
 
+const statusStyle = {
+    Available:"bg-primary text-white",
+    NotAvailable: "bg-gray-500 text-white",
+    Completed: "bg-primary text-white",
+    Progress: "bg-[#00AAFF] text-white",
+    Pending: "bg-[#00AAFF] text-white"
+};
+
+
 
 export const StatusBadge = ({ status }) => {
-    const isInProgress = status === "Not Available";
     return (
         <span
-            className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${isInProgress ? "bg-gray-500 text-white" : "bg-primary text-white"
-                }`}
+            className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${statusStyle[status] || "bg-gray-200 text-black"}`}
         >
             <span className="w-2 h-2 rounded-full bg-current mr-2"></span>
             {status}
@@ -13,7 +20,7 @@ export const StatusBadge = ({ status }) => {
     );
 };
 
-
+// Completed
 
 const statusStyles = {
     Pending: "bg-[#007AFF] text-white",

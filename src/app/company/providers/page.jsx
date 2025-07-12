@@ -1,4 +1,6 @@
 "use client";
+import AddProvider from "@/components/common/add-provider";
+import ProviderProfile from "@/components/common/provider-profile";
 import useConfirmation from "@/components/reuseable/delete-modal";
 import { Deletebtn, Editbtn } from "@/components/reuseable/Icon-button";
 import Modal from "@/components/reuseable/modal";
@@ -16,6 +18,8 @@ import React, { useState } from "react";
 
 export default function ServiceProviders() {
   const { confirm } = useConfirmation();
+  const [isOpen, setIsOpen] = useState(false)
+  const [isFilter, setIsFilter] = useState(false)
   const [isPreview, setIsPreview] = useState(false);
   const headers = ["User", "Email", "Type", "Status", "Action"];
 
@@ -74,7 +78,7 @@ export default function ServiceProviders() {
       img: "/images/cleaner7.jpg",
       email: "jamal.hossain@example.com",
       type: "Cleaner",
-      status: "Not Available",
+      status: "NotAvailable",
     },
     {
       id: 7,
@@ -82,7 +86,7 @@ export default function ServiceProviders() {
       img: "/images/cleaner7.jpg",
       email: "jamal.hossain@example.com",
       type: "Cleaner",
-      status: "Not Available",
+      status: "NotAvailable",
     },
   ];
 
@@ -101,17 +105,34 @@ export default function ServiceProviders() {
           <SearchBox />
         </li>
         <li className="flex gap-4">
-          <Button className="bg-primary rounded-sm h-full w-fit py-[10px] hover:bg-primary cursor-pointer">
+          <Button onClick={() => setIsOpen(!isOpen)} className="bg-primary rounded-sm h-full w-fit py-[10px] hover:bg-primary cursor-pointer">
             <Plus size={18} className="mr-1" />
             Add provider
           </Button>
-          <Button
-            variant={"outline"}
-            className="bg-transparent rounded-sm h-full py-[8px] text-black1 shadow-none cursor-pointer border border-gray-400"
-          >
-            <Funnel size={18} className="mr-1" />
-            Filter
-          </Button>
+          <div className="relative">
+            <Button
+              onClick={() => setIsFilter(!isFilter)}
+              variant="outline"
+              className="bg-transparent rounded-sm h-full py-[8px] text-black1 shadow-none cursor-pointer border border-gray-400 relative"
+            >
+              <Funnel size={18} className="mr-1" />
+              Filter
+            </Button>
+            {isFilter && (
+              <div className="absolute right-0 mt-2 top-8 bg-white rounded-lg shadow-lg border w-[150px] border-gray-200 z-10">
+                {["Both", "Available", "Not Available"].map((label) => (
+                  <button
+                    key={label}
+                    onClick={() => setIsFilter(false)}
+                    className="block w-full border-b-2 text-center px-6 py-2 text-gray-800 hover:bg-gray-100 transition cursor-pointer"
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
         </li>
       </ul>
       <div>
@@ -156,7 +177,7 @@ export default function ServiceProviders() {
           <li className="font-medium">
             <Pagination
               page={1}
-              onPageChange={() => {}}
+              onPageChange={() => { }}
               totalPage={10}
               per_page={2}
             ></Pagination>
@@ -164,8 +185,12 @@ export default function ServiceProviders() {
         </ul>
       </div>
       {/* preview */}
-      <Modal open={isPreview} setIsOpen={setIsPreview}>
-        <h1>Hello Bangladesh</h1>
+      <Modal open={isPreview} setIsOpen={setIsPreview} className={"p-2 lg:max-w-[900px]"}>
+        <ProviderProfile setIsPreview={setIsPreview} />
+      </Modal>
+      {/* add provider */}
+      <Modal open={isOpen} setIsOpen={setIsOpen} className={"p-3 lg:max-w-[600px]"}>
+        <AddProvider />
       </Modal>
     </div>
   );

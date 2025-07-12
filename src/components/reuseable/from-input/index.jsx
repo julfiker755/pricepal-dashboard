@@ -27,7 +27,7 @@ export function FromInput({
       render={({ field, fieldState: { error } }) => (
         <div>
           {label && (
-            <Label className={cn("mb-2 text-primary text-base", stylelabel)}>
+            <Label className={cn("mb-2 text-black text-base", stylelabel)}>
               {label}
             </Label>
           )}
