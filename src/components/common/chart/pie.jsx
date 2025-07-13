@@ -21,11 +21,11 @@ const total = data.reduce((acc, item) => acc + item.value, 0);
 
 export default function DonutChart() {
     return (
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full  mx-auto">
             <h2 className="text-xl font-bold mb-3">Earning Statistics</h2>
             <div className="bg-white p-6 rounded-2xl w-full max-w-7xl mx-auto shadow-sm flex justify-evenly items-center gap-6 relative">
                 {/* Donut Chart */}
-                <div className="relative w-11/12 h-[500px]">
+                <div className="relative w-11/12 h-[450px]">
                     <ResponsiveContainer>
                         <PieChart>
                             <Pie

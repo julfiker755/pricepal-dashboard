@@ -12,7 +12,7 @@ const stats = [
 
 const Dashboard = () => (
   <div>
-    <NavTitle title={"Dashboard overview"} subTitle={"You can see all of the overview of your app from here"} />
+    <NavTitle title={"Dashboard overview"} />
     <div className="grid grid-cols-1 lg:grid-cols-3 p-4 gap-4">
       {stats.map((item, idx) => (
         <StartCard
@@ -23,7 +23,7 @@ const Dashboard = () => (
         />
       ))}
     </div>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 gap-10">
       <BookingStatictis />
       <DonutChart />
     </div>
