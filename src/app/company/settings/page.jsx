@@ -62,7 +62,7 @@ export default function Settings() {
             <Form className="space-y-4" from={from} onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                     {/* Company Logo Section */}
-                    <div className="bg-white rounded-lg p-6">
+                    <div className="bg-white rounded-lg p-6 w-full">
                         <UploadImg
                             onChange={(img) => console.log(img)}
                             label="Company logo"
@@ -94,7 +94,7 @@ export default function Settings() {
                         </div>
                     </div>
 
-                    <div className="bg-white rounded-lg p-6 col-span-2">
+                    <div className="bg-white rounded-lg p-6 col-span-1 lg:col-span-2">
                              {/* <FromTextArea
                                 label={"About company"}
                                     className="bg-[#636363]/0.5 border py-2 h-12 rounded-md"
