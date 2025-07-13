@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Navber({ sidebarOpen, setSidebarOpen }) {
   const {title,subtitle} = useTitle();
   return (
-    <div className="sticky top-0  flex w-full bg-[white] py-3 shadow-xs">
+    <div className="sticky top-0  flex w-full bg-[white] py-3 z-10 shadow-xs">
       <header className="w-full px-3">
         <div className="flex justify-between items-center">
           {/* left side*/}

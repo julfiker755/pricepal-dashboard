@@ -6,9 +6,10 @@ import { Upload } from 'lucide-react';
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import DocumentUpload from '../upload-document';
+import UploadImg from '@/components/reuseable/upload-img';
 
 export default function AddProvider() {
-    const [upload,setUpload]=useState(false)
+    const [upload, setUpload] = useState(false)
     const [profileImage, setProfileImage] = useState(null);
     const from = useForm({
         // resolver: zodResolver(authSchema),
@@ -45,45 +46,12 @@ export default function AddProvider() {
         <div>
             <h1 className="font-semibold text-center text-lg">Add new service provider</h1>
             <div>
-                <div className="text-center mt-5">
-                    <div
-                        onClick={handleImageUpload}
-                        className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-3 flex items-center justify-center cursor-pointer hover:bg-gray-300 transition-colors overflow-hidden"
-                    >
-                        {profileImage ? (
-                            <img
-                                src={profileImage || "/placeholder.svg"}
-                                alt="Provider"
-                                className="w-full h-full object-cover rounded-full"
-                            />
-                        ) : (
-                            <div className="w-12 h-12 bg-[#6DA40A] rounded-full flex items-center justify-center">
-                                <svg
-                                    className="w-6 h-6 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                                    />
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                                    />
-                                </svg>
-                            </div>
-                        )}
-                    </div>
-                    <p className="text-gray-700 font-medium">
-                        Upload provider picture
-                    </p>
-                </div>
+                <UploadImg
+                    onChange={(img) => console.log(img)}
+                    label=" Upload provider picture"
+                    className={"mt-5"}
+                />
+
                 <Form className="space-y-4" from={from} onSubmit={handleSubmit}>
                     <FromInput
                         className="bg-[#636363]/0.5 border"
@@ -114,7 +82,7 @@ export default function AddProvider() {
                         placeholder="Enter your contact"
                     />
 
-                    <div onClick={()=>setUpload(!upload)}  className="flex items-center justify-center  bg-gray-50 p-1 cursor-pointer">
+                    <div onClick={() => setUpload(!upload)} className="flex items-center justify-center  bg-gray-50 p-1 cursor-pointer">
                         <div className="w-full">
                             <div className="flex items-center justify-center p-8 bg-gray-100 border border-gray-200 rounded-2xl">
                                 <div className="flex items-center gap-3">
@@ -129,11 +97,10 @@ export default function AddProvider() {
                     </div>
                 </Form>
                 <Modal open={upload} setIsOpen={setUpload} className={"lg:max-w-[530px]"}>
-                   <DocumentUpload/>
+                    <DocumentUpload />
                 </Modal>
             </div>
         </div>
     )
 }
 
-// DocumentUpload

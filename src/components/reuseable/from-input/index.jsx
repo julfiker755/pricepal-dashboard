@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { CircleAlert, Eye, EyeOff } from "lucide-react";
 import { Controller, useFormContext } from "react-hook-form";
@@ -14,8 +15,9 @@ export function FromInput({
   placeholder,
   stylelabel,
   className,
+  icon,
 }) {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(true);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const { control } = useFormContext();
 
   const inputType = eye ? (isPasswordVisible ? "text" : "password") : type;
@@ -31,17 +33,29 @@ export function FromInput({
               {label}
             </Label>
           )}
+
           <div className="relative">
+            {icon && (
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">
+                {icon}
+              </div>
+            )}
+
             <Input
-              className={className}
+              className={cn(
+                icon ? "pl-10" : "",
+                eye ? "pr-10" : "",
+                className
+              )}
               {...field}
               type={inputType}
               placeholder={placeholder}
             />
+
             {eye && (
               <div
                 onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                className="absolute cursor-pointer top-[6px] right-2"
+                className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer"
               >
                 {isPasswordVisible ? (
                   <EyeOff className="text-muted-foreground" size={20} />
@@ -51,6 +65,7 @@ export function FromInput({
               </div>
             )}
           </div>
+
           {error?.message && (
             <div className="text-sm pt-[1px] text-end text-[#f73f4e] flex gap-1 items-center justify-end">
               {error.message}
