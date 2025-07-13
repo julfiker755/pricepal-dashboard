@@ -53,7 +53,7 @@ const ServiceCard = () => {
     return (
         <div>
             <NavTitle title={"Services"} subTitle={"You can manage all of your services from here."} />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
                     <Card
                         key={index}
@@ -98,3 +98,5 @@ const ServiceCard = () => {
 };
 
 export default ServiceCard;
+
+

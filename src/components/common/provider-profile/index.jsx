@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import ServicesList from "../service-list";
+import { Backbtn } from "@/components/reuseable/Icon-button";
 
 
 export default function ProviderProfile({setIsPreview}) {
@@ -70,11 +71,11 @@ export default function ProviderProfile({setIsPreview}) {
 
     return (
         <div>
-            <div className={`mb-2 flex items-center ${seeAll ? "justify-between":"justify-center"}`}>
-                {seeAll && (<h1 onClick={()=> {
+            <div className={`mb-4 flex items-center  ${seeAll ? "justify-between":"justify-center"}`}>
+                {seeAll && (<Backbtn onClick={()=> {
                     setIsPreview(false)
                     setSeeAll(!seeAll)
-                }} className="font-medium flex items-center gap-1 cursor-pointer"><ArrowLeft size={16} />Back</h1>)}
+                }}></Backbtn>)}
                 <h1 className="font-semibold text-center text-lg">{seeAll ? "All services by this provider":"Provider Profile"}</h1>
                 <h1 className="opacity-0">2</h1>
             </div>
@@ -82,7 +83,7 @@ export default function ProviderProfile({setIsPreview}) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Personal Information */}
                     <div>
-                        <div className="flex items-center mb-6">
+                        <div className="flex items-center mb-2">
                             <svg
                                 className="w-5 h-5 text-gray-600 mr-2"
                                 fill="none"
@@ -101,7 +102,7 @@ export default function ProviderProfile({setIsPreview}) {
                             </h3>
                         </div>
 
-                        <div className="bg-gray-50 rounded-lg p-6">
+                        <div className="bg-gray-50 border rounded-lg p-6">
                             {/* Profile Section */}
                             <div className="text-center mb-6">
                                 <div className="size-20 mx-auto rounded-full">
@@ -177,7 +178,7 @@ export default function ProviderProfile({setIsPreview}) {
 
                     {/* Services */}
                     <div>
-                        <div className="flex items-center mb-6">
+                        <div className="flex items-center mb-2">
                             <svg
                                 className="w-5 h-5 text-gray-600 mr-2"
                                 fill="none"
@@ -196,18 +197,18 @@ export default function ProviderProfile({setIsPreview}) {
                             </h3>
                         </div>
 
-                        <div className="bg-gray-50 rounded-lg p-6">
+                        <div className="bg-gray-50 rounded-lg border p-2">
                             <div className="space-y-4">
                                 {services.map((service) => (
                                     <div
                                         key={service.id}
-                                        className="flex items-center justify-between"
+                                        className="flex items-center bg-gray-200/70 rounded-md py-1 px-1  justify-between"
                                     >
                                         <div className="flex items-center space-x-3">
                                             <img
                                                 src={service.avatar || "/placeholder.svg"}
                                                 alt={service.clientName}
-                                                className="w-10 h-10 rounded-full object-cover"
+                                                className="size-14 rounded-full object-cover"
                                             />
                                             <div>
                                                 <h4 className="font-medium text-gray-900">

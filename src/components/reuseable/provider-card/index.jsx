@@ -6,11 +6,13 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 import useConfirmation from "../delete-modal";
 import Modal from "../modal";
 import ChnagePassowrd from "@/components/common/admin/provider-password";
+import ProviderDetails from "@/components/common/provider-details";
 
 const ProviderCard = () => {
     const { confirm } = useConfirmation();
     const [open, setIsOpen] = useState(false);
     const [isChnage, setIsChange] = useState(false)
+    const [isPreview,setIsPreview]=useState(false)
     const dropdownRef = useRef(null);
 
     // Close dropdown on outside click
@@ -155,13 +157,17 @@ const ProviderCard = () => {
 
             {/* Action Button */}
             <div className="p-2 flex justify-center items-center">
-                <button className="bg-[#6DA40A] text-white px-4 py-2 rounded-3xl hover:bg-green-600 transition flex items-center justify-center w-2/3 text-base font-medium">
+                <button onClick={()=>setIsPreview(!isPreview)} className="bg-[#6DA40A] cursor-pointer text-white px-4 py-2 rounded-3xl hover:bg-green-600 transition flex items-center justify-center w-2/3 text-base font-medium">
                     See provider details <MdOutlineArrowOutward className="ml-2 text-lg" />
                 </button>
             </div>
-
+             {/* chnage password */}
             <Modal open={isChnage} setIsOpen={setIsChange} className={"p-2"}>
                 <ChnagePassowrd />
+            </Modal>
+            {/* preview */}
+            <Modal open={isPreview} setIsOpen={setIsPreview} className={"p-2 lg:max-w-[800px]"}>
+               <ProviderDetails/>
             </Modal>
         </div>
     );

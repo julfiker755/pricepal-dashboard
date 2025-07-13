@@ -1,5 +1,6 @@
 "use client";
-import { Eye, Trash } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Eye, Trash, Trash2 } from "lucide-react";
 
 // Deltebtn
 export function Editbtn({ onClick }) {
@@ -24,3 +25,23 @@ export function Deletebtn({ onClick }) {
     </button>
   );
 }
+// back
+export function Backbtn({ onClick }) {
+  return (
+    <h1 onClick={onClick} className="font-medium flex items-center gap-1 cursor-pointer"><ArrowLeft size={16} />Back</h1>
+
+  );
+}
+
+
+// back
+export function DeleteService({ onClick }) {
+  return (
+    <Button onClick={onClick } variant="ghost" size="icon" className="bg-[#FFE8E8] hover:bg-[#FFE8E8]">
+    <Trash2 className="h-5 w-5 text-[#FF5353]" />
+    <span className="sr-only">Delete image</span>
+  </Button>
+  );
+}
+
+

@@ -185,11 +185,11 @@ export default function ServiceProviders() {
         </ul>
       </div>
       {/* preview */}
-      <Modal open={isPreview} setIsOpen={setIsPreview} className={"p-2 lg:max-w-[900px]"}>
+      <Modal open={isPreview} setIsOpen={setIsPreview} className={"p-4 lg:max-w-[900px]"}>
         <ProviderProfile setIsPreview={setIsPreview} />
       </Modal>
       {/* add provider */}
-      <Modal open={isOpen} setIsOpen={setIsOpen} className={"p-3 lg:max-w-[600px]"}>
+      <Modal open={isOpen} setIsOpen={setIsOpen} className={"p-4 lg:max-w-[600px]"}>
         <AddProvider />
       </Modal>
     </div>
