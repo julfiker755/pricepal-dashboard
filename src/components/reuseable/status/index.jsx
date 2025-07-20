@@ -1,9 +1,5 @@
-import { cn } from "@/lib/utils";
-
-// StatusBadge
-
 const statusStyle = {
-    Available:"bg-primary text-white",
+    Available: "bg-primary text-white",
     NotAvailable: "bg-gray-500 text-white",
     Completed: "bg-primary text-white",
     Progress: "bg-[#00AAFF] text-white",
@@ -43,4 +39,26 @@ export default function OrderBadge({ status }) {
 }
 
 
+// BookingsStatus
+const defaultStatusOptions = [
+  { value: "pending", label: "Pending", color: "bg-blue-500" },
+  { value: "approve", label: "Approve", color: "bg-green-500" },
+  { value: "ongoing", label: "Ongoing", color: "bg-purple-500" },
+  { value: "completed", label: "Completed", color: "bg-orange-500" },
+  { value: "decline", label: "Decline", color: "bg-red-500" },
+];
 
+
+
+export function BookingsStatus({ statusValue="pending" }) {
+  const status = defaultStatusOptions.find((s) => s.value === statusValue);
+  if (!status) return null;
+  return (
+    <div
+      className={`w-[100px] flex items-center gap-1 ${status.color} text-sm px-2 py-1 rounded-full text-white font-medium  transition-opacity`}
+    >
+      <div className="w-2 h-2 bg-white rounded-full" />
+      {status.label}
+    </div>
+  );
+}

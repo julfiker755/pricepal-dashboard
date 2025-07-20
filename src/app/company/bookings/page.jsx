@@ -1,11 +1,11 @@
 "use client"
 import StatusDropdown from '@/components/reuseable/booking-drowdown';
-import useConfirmation from '@/components/reuseable/delete-modal';
 import { Deletebtn, Editbtn } from '@/components/reuseable/Icon-button';
 import Modal from '@/components/reuseable/modal';
 import NavTitle from '@/components/reuseable/nav-title';
 import { Pagination } from '@/components/reuseable/pagination';
 import SearchBox from '@/components/reuseable/start-card/search-box';
+import { BookingsStatus } from '@/components/reuseable/status';
 import { Table } from '@/components/reuseable/table';
 import { Button } from '@/components/ui/button';
 import { TableCell, TableRow } from '@/components/ui/table';
@@ -15,7 +15,6 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 
 const Bookings = () => {
-    const { confirm } = useConfirmation();
     const [isFilter, setIsFilter] = useState(false)
     const [isPreview, setIsPreview] = useState(false)
     const headers = ["Name", "Email", "Time", "Service", "Status", "Action"];
@@ -88,12 +87,6 @@ const Bookings = () => {
     ]
 
 
-    const handleDelete = async (id) => {
-        const confirmed = await confirm();
-        if (confirmed) {
-            console.log(id);
-        }
-    };
 
     const handleStatusChange = (status) => {
         console.log("Selected status:", status)
@@ -171,11 +164,10 @@ const Bookings = () => {
                                 </ul>
                             </TableCell>
                             <TableCell>{item.service}</TableCell>
-                            <TableCell><StatusDropdown className={"w-[160px]"} onChange={handleStatusChange} /></TableCell>
+                            <TableCell><BookingsStatus statusValue={item?.status?.toLowerCase()}/></TableCell>
                             <TableCell>
                                 <ul className="flex  gap-2">
                                     <li><Editbtn onClick={() => setIsPreview(!isPreview)} ></Editbtn></li>
-                                    <li> <Deletebtn onClick={() => handleDelete()}></Deletebtn></li>
                                 </ul>
                             </TableCell>
                         </TableRow>
@@ -196,13 +188,13 @@ const Bookings = () => {
             {/* Preview Modal */}
             <Modal open={isPreview} setIsOpen={setIsPreview}>
                 <div className="text-center mb-6">
-                    <div className="size-28 mx-auto rounded-full">
+                    <div className="size-28 mx-auto rounded-full mb-3">
                         <Image
                             src={PlaceholderImg()}
                             alt={"item3"}
                             width={100}
                             height={100}
-                            className="rounded-full object-cover"
+                            className="rounded-full object-cover h-full w-full"
                         />
                     </div>
                     <h1 className='font-medium text-xl text-black1'>Md. Abid Hasan</h1>

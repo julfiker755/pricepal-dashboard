@@ -30,7 +30,7 @@ export function FieldRow({
         <SelectTrigger className="w-full rounded-full">
           <SelectValue placeholder="Select type" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className={"rounded-xl"}>
           <SelectItem value="option">Option</SelectItem>
           <SelectItem value="text">Text</SelectItem>
           <SelectItem value="number">Number</SelectItem>

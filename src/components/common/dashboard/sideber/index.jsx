@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { adminLinks, companyLinks } from '../nav-data';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 // adminLinks
 
@@ -36,7 +37,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               <NavItem item={links} />
             </nav>
           </div>
-          <Button className="mx-3 absolute bottom-3 w-[200px] text-rose-500 bg-white cursor-pointer hover:bg-white"><LogOut className="rotate-180" />Log Out</Button>
+          <Link href={"/"}> <Button className="mx-3 absolute bottom-3 w-[200px] text-rose-500 bg-white cursor-pointer hover:bg-white"><LogOut className="rotate-180" />Log Out</Button></Link>
         </div>
       </aside>
     </div>

@@ -9,8 +9,10 @@ import { FromInput } from "@/components/reuseable/from-input";
 import Form from "@/components/reuseable/from";
 import Link from "next/link";
 import { authSchema } from "@/components/schema";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router=useRouter()
   const from = useForm({
     resolver: zodResolver(authSchema),
     defaultValues: {
@@ -20,7 +22,10 @@ export default function LoginForm() {
   });
 
   const handleSubmit = async (values) => {
-    console.log("Login form:", values);
+    console.log(values)
+    if(values){
+      router.push("/admin")
+    }
   };
 
   return (

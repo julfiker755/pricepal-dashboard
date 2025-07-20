@@ -57,7 +57,7 @@ export function AddFieldDialog({ onSave, children }) {
               <SelectTrigger id="fieldType" className="w-full">
                 <SelectValue placeholder="Option" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className={"rounded-xl"}>
                 <SelectItem value="option">Option</SelectItem>
                 <SelectItem value="text">Text</SelectItem>
                 <SelectItem value="number">Number</SelectItem>

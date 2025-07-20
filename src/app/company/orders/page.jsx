@@ -186,15 +186,15 @@ export default function Orders() {
         </ul>
       </div>
       {/* preview Modal*/}
-      <Modal open={isPreview} setIsOpen={setIsPreview} className={"px-2"}>
+      <Modal open={isPreview} setIsOpen={setIsPreview} className={"px-5"}>
         <div className="text-center">
-          <div className="size-28 mx-auto rounded-full">
+          <div className="size-24 mx-auto rounded-full">
             <Image
               src={PlaceholderImg()}
               alt={"item3"}
               width={100}
               height={100}
-              className="rounded-full object-cover"
+              className="rounded-full w-full h-full object-cover"
             />
           </div>
           <p className="text-gray-500">example@gmail.com</p>
@@ -236,14 +236,21 @@ export default function Orders() {
               <span className="text-black">$1680</span>
             </div>
           </div>
-          <Button onClick={() => {
+          {status === "Pending" ? (
+            <Button onClick={() => {
             setIsPreview(false)
             setIsAssign(!isAssign)
-          }} variant={"main"} className={"w-full mt-3"}>Assign Provider</Button>
+          }} variant={"main"} className={"w-full mt-4"}>Assign Provider</Button>
+          ): status === "Ongoing" ? (
+             <Button variant={"main"} className={"w-full mt-4"}>Send delivery request</Button>
+          ):(
+            <Button variant={"main"} className={"w-full mt-4"}>Completed</Button>
+          )}
+          
         </div>
       </Modal>
       {/* asssign  Modal*/}
-      <Modal open={isAssign} setIsOpen={setIsAssign} className={"lg:max-w-[450px] p-3"}>
+      <Modal open={isAssign} setIsOpen={setIsAssign} className={"lg:max-w-[450px] p-5"}>
         <div className="flex justify-between">
         <h1 onClick={() => {
             setIsPreview(true)
@@ -253,7 +260,7 @@ export default function Orders() {
           <h1 className="opacity-0">Assign provider</h1>
         </div>
         <div>
-        <div className="p-4 border-b border-gray-200">
+        <div className="border-b border-gray-200 pb-3">
           <div className="relative border rounded-md">
             <svg
               className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
