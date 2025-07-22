@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 // adminLinks
 
-export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
+export default function Sidebar({ sidebarOpen, setSidebarOpen}) {
   const pathname = usePathname();
   const links = pathname.includes("/company") ? companyLinks : adminLinks;
 
@@ -25,7 +25,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
       )}
       {/* Sidebar */}
       <aside
-        className={`absolute left-0 top-0 z-20 flex h-screen transition-transform pr-5  transform duration-300 ease-linear flex-col overflow-y-hidden bg-primary  text-[#D2D2D2] w-[240px] lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`absolute left-0 top-0 z-20 flex h-screen transition-transform pr-5  transform duration-300 ease-linear flex-col overflow-y-hidden bg-primary [.admin_&]:bg-primary1 [.admin_&]:text-black  text-[#D2D2D2] w-[240px] lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <div className="flex flex-col ">

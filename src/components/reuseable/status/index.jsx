@@ -1,7 +1,7 @@
 const statusStyle = {
     Available: "bg-primary text-white",
     NotAvailable: "bg-gray-500 text-white",
-    Completed: "bg-primary text-white",
+    Completed: "bg-primary text-white [.admin_&]:bg-primary1 [.admin_&]:text-blacks",
     Progress: "bg-[#00AAFF] text-white",
     Pending: "bg-[#00AAFF] text-white"
 };

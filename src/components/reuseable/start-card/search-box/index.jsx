@@ -10,7 +10,7 @@ export default function SearchBox({className}) {
         className="w-full bg-white pl-2 border-[1px] py-2 text-primary outline-0 placeholder:text-gray-300 placeholder:text-sm"
         placeholder="Search for parents"
     />
-    <div className="bg-primary py-3 px-3 rounded-tr-xs rounded-br-xs text-white font-semibold transition-colors cursor-pointer">
+    <div className="bg-primary [.admin_&]:bg-primary1 py-3 px-3 rounded-tr-xs rounded-br-xs text-white font-semibold transition-colors cursor-pointer">
         <Search size={17} />
     </div>
 </div>

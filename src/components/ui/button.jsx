@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        main:"bg-primary text-white text-white rounded-md cursor-pointer",
+        main:"bg-primary text-white text-white rounded-md cursor-pointer [.admin_&]:bg-primary1 [.admin_&]:text-blacks/80",
         decline:"bg-[#FF5353] hover:bg-[#FF5353] px-3 text-white font-semibold",
         approve:"bg-primary hover:bg-primary px-3 text-white font-semibold"
       },

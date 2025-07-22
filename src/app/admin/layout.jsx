@@ -1,10 +1,18 @@
 "use client"
 import Navber from '@/components/common/dashboard/navber'
 import Sidebar from '@/components/common/dashboard/sideber'
-import React, { useState } from 'react'
+import { usePathname } from 'next/navigation';
+import React, { useEffect, useState } from 'react'
 
 export default function ServiceLayout({ children }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const isAdmin = pathname.startsWith('/admin');
+        document.body.classList.toggle('admin', isAdmin);
+    }, [pathname]);
+
     return (
         <div className="flex h-screen overflow-hidden">
             {/* <!-- ===== Sidebar Start ===== --> */}

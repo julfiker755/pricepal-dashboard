@@ -7,9 +7,9 @@ export function Editbtn({ onClick }) {
   return (
     <button
       onClick={onClick}
-      className="px-2 py-2 text-xs border border-none bg-[#F2FFDA] rounded-lg cursor-pointer"
+      className="px-2 py-2 text-xs border border-none bg-[#F2FFDA] [.admin_&]:bg-primary1/25 rounded-lg cursor-pointer"
     >
-      <Eye className="text-[#6DA40A]" />
+      <Eye className="text-[#6DA40A] [.admin_&]:text-primary1" />
     </button>
   );
 }

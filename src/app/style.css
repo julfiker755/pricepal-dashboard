@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @custom-variant dark (&:is(.dark *));
+
 
 @theme inline {
   --color-background: var(--background);
@@ -42,7 +44,9 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --color-primary:#6DA40A;
-  --color-black1:#000000
+  --color-primary1:#add8e6;
+  --color-black1:#000000;
+  --color-blacks:#000000
 }
 
 /* The .jodit-container.jodit_theme_dark ensures it only applies when the dark theme is active */
@@ -194,3 +198,10 @@ gap: 10px;
   border-radius: 8px !important;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1) !important;
 }
+
+
+ /* plugins: [
+    function ({ addVariant }) {
+      addVariant('admin', '.admin &');
+    },
+  ], */

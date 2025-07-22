@@ -27,7 +27,7 @@ export default function NavItem({ item }) {
       {item.map(({ to, label, icon: Icon, submenu }, parentIndex) => (
         <li key={parentIndex}>
           {to ? (
-            <Link className={`flex px-3 ${pathname === to && "!border-l-5 !border-[#00AAFF] !bg-white !text-primary"} hover:bg-white rounded-r-md hover:!text-primary border-l-5 border-transparent  py-2 items-center font-medium text-base gap-x-2 text-[#D2D2D2]`} href={to}>
+            <Link className={`flex px-3 ${pathname === to && "!border-l-5 !border-[#00AAFF] !bg-white !text-primary [.admin_&]:!text-[#6fd6f8e1] "} hover:bg-white  [.admin_&]:text-black  rounded-r-md hover:!text-primary hover:[.admin_&]:!text-[#6fd6f8e1] border-l-5 border-transparent  py-2 items-center font-medium text-base gap-x-2 text-[#D2D2D2]`} href={to}>
               {Icon && <Icon size={20} />} {label}
             </Link>
           ) : (
@@ -54,7 +54,7 @@ export default function NavItem({ item }) {
               className="overflow-hidden transition-all duration-300 ease-out max-h-0 space-y-1"
             >
               {submenu.map(({ to, label, icon: SubIcon }, subIndex) => (
-                <li key={subIndex} className={`${pathname === to && "!border-l-5 !border-[#00AAFF] !bg-white !text-primary"} rounded-r-md pl-6 hover:bg-[#FFFFFF66] border-l-5 border-transparent  py-2 hover:text-white`}>
+                <li key={subIndex} className={`${pathname === to && "!border-l-5 !border-[#00AAFF] !bg-white !text-primary [.admin_&]:!text-[#6fd6f8e1]"} rounded-r-md pl-6 hover:bg-white border-l-5 border-transparent  py-2 hover:!text-primary hover:[.admin_&]:!text-[#6fd6f8e1]`}>
                   {to && (
                     <Link className="flex items-center gap-x-2" href={to}>
                       {SubIcon && <SubIcon size={20} />} {label}

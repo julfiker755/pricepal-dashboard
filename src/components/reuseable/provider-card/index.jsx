@@ -7,6 +7,7 @@ import useConfirmation from "../delete-modal";
 import Modal from "../modal";
 import ChnagePassowrd from "@/components/common/admin/provider-password";
 import ProviderDetails from "@/components/common/provider-details";
+import { Button } from "@/components/ui/button";
 
 const ProviderCard = () => {
     const { confirm } = useConfirmation();
@@ -125,9 +126,12 @@ const ProviderCard = () => {
                 </div>
 
                 <div>
-                    <button className="bg-[#6DA40A] text-white px-4 py-2 rounded-3xl hover:bg-green-600 transition">
+                    <Button variant={"main"} className={"rounded-3xl"}>
                         Cleaner
-                    </button>
+                    </Button>
+                    {/* <button className="bg-[#6DA40A] text-white px-4 py-2 rounded-3xl hover:bg-green-600 transition">
+                        
+                    </button> */}
                 </div>
             </div>
 
@@ -157,9 +161,9 @@ const ProviderCard = () => {
 
             {/* Action Button */}
             <div className="p-2 flex justify-center items-center">
-                <button onClick={()=>setIsPreview(!isPreview)} className="bg-[#6DA40A] cursor-pointer text-white px-4 py-2 rounded-3xl hover:bg-green-600 transition flex items-center justify-center w-2/3 text-base font-medium">
+                <Button variant={"main"} onClick={()=>setIsPreview(!isPreview)} className="cursor-pointer text-white px-4 py-2 rounded-3xl transition flex items-center justify-center w-2/3 text-base font-medium">
                     See provider details <MdOutlineArrowOutward className="ml-2 text-lg" />
-                </button>
+                </Button>
             </div>
              {/* chnage password */}
             <Modal open={isChnage} setIsOpen={setIsChange} className={"p-2"}>

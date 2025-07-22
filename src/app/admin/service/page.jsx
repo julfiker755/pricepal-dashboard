@@ -88,7 +88,7 @@ const ServiceCard = () => {
             </div>
             <div className='mt-5'>
                 <Link href={`/admin/service/add`}>
-                    <Button className="w-2/11 my-8 rounded-3xl hover:cursor-pointer">
+                    <Button variant={"main"} className="w-2/11 my-8 rounded-3xl">
                         <FiPlus /> Add new service
                     </Button>
                 </Link>

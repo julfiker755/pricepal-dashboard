@@ -30,7 +30,7 @@ export default function ChatInterface() {
   const selectedContact = contacts.find((c) => c.id === selectedChat);
 
   return (
-    <div className="bg-white">
+    <div className="bg-body">
        <NavTitle title="Chats" />
       {/* Sidebar */}
       <aside className="w-80 border-r border-gray-200 flex flex-col">

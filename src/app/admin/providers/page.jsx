@@ -19,7 +19,7 @@ export default function Providers() {
           <SearchBox />
         </li>
         <li className="flex gap-4">
-          <Button onClick={() => setIsAdd(!isAdd)} className="bg-primary rounded-sm h-full w-fit py-[10px] hover:bg-primary cursor-pointer">
+          <Button onClick={() => setIsAdd(!isAdd)} variant={"main"} className="rounded-sm h-full w-fit py-[10px] cursor-pointer">
             <Plus size={18} className="mr-1" />
             Add provider
           </Button>
