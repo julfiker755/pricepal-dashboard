@@ -2,10 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 
 export default function Verification() {
+  const router=useRouter()
   const [code, setCode] = useState(Array(6).fill(""));
   const [error, setError] = useState("");
 
@@ -20,10 +22,12 @@ export default function Verification() {
     const joined = code.join("");
     if (joined.length < 6 || code.includes("")) {
       setError("Please enter all 6 digits.");
+     
     } else {
       setError("");
       console.log("Verifying:", joined);
       // Verification logic here
+       router.push("/set-password")
     }
   };
 

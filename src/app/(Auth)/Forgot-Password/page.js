@@ -5,12 +5,14 @@ import { emailSchema } from "@/components/schema";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 
 
 
 export default function ForgotPassword() {
+  const router=useRouter()
   const from = useForm({
     resolver: zodResolver(emailSchema),
     defaultValues: {
@@ -20,6 +22,7 @@ export default function ForgotPassword() {
 
   const handleSubmit = async (values) => {
     console.log("Login form:", values);
+    router.push("/otp-verification")
   };
 
   return (
@@ -37,9 +40,12 @@ export default function ForgotPassword() {
               name="email"
               placeholder="Enter your Email"
             />
+
              <div className="flex justify-center">
                <Button variant={"main"} className="rounded-sm"> Send Code</Button>
              </div>
+            
+            
           </Form>
         </CardContent>
       </Card>
