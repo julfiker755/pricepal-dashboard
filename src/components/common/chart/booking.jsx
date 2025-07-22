@@ -1,4 +1,5 @@
 "use client";
+import { hexToRgba } from "@/lib/utils";
 import {
     AreaChart,
     Area,
@@ -10,7 +11,7 @@ import {
     Legend,
 } from "recharts";
 
-const BookingStatictis = () => {
+const BookingStatictis = ({color}) => {
     const data = [
         { name: "Sat", value: 20 },
         { name: "Sun", value: 95 },
@@ -41,10 +42,10 @@ const BookingStatictis = () => {
                         <Area
                             type="monotone"
                             dataKey="value"
-                            stroke="#84cc16"
-                            fill="url(#colorGreen)"
-                            activeDot={{ r: 6, stroke: "#84cc16", strokeWidth: 2, fill: "white" }}
-                            dot={{ stroke: "#84cc16", strokeWidth: 2, fill: "white", r: 4 }}
+                            stroke={color}
+                            fill={hexToRgba(color,0.2)}
+                            activeDot={{ r: 6, stroke:color, strokeWidth: 2, fill: "white" }}
+                            dot={{ stroke:color, strokeWidth: 2, fill: "white", r: 4 }}
                         />
                     </AreaChart>
                 </ResponsiveContainer>

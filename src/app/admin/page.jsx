@@ -24,7 +24,7 @@ const Dashboard = () => (
       ))}
     </div>
     <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 gap-10">
-      <BookingStatictis />
+      <BookingStatictis color={"#add8e6"} />
       <DonutChart />
     </div>
   </div>
