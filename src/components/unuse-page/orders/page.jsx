@@ -12,6 +12,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import BookingBadge from "@/components/reuseable/status";
 
 export default function Orders() {
   const [status, setStatus] = useState("Pending");
@@ -162,7 +163,8 @@ export default function Orders() {
               <TableCell>{item.time}</TableCell>
               <TableCell>{item.service}</TableCell>
               <TableCell>
-                <OrderBadge status={item.status} />
+                {/* <OrderBadge status={item.status} /> */}
+                 <BookingBadge status={item.status}/>
               </TableCell>
               <TableCell>
                 <div className="flex gap-2">

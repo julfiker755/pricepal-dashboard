@@ -6,7 +6,7 @@ import NavTitle from "@/components/reuseable/nav-title";
 
 const stats = [
   { title: "Earnings", value: "$500.00", icon: CreditCard },
-  { title: "Appointments", value: "16", icon: LibraryBig },
+  { title: "Providers", value: "16", icon: LibraryBig },
   { title: "Users", value: "1200", icon: Users2 },
 ];
 

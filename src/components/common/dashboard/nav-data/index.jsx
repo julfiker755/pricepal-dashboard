@@ -1,6 +1,5 @@
 import {
   LayoutDashboard,
-  UsersRound,
   Settings,
   UserRound,
   KeyRound,
@@ -18,7 +17,6 @@ export const companyLinks = [
   { to: "/company", icon: LayoutDashboard, label: "Dashboard" },
   { to: "/company/settings", icon: Dock, label: "Company Settings" },
   { to: "/company/providers", icon: House, label: "Service providers" },
-  { to: "/company/orders", icon: UserRound, label: "Orders" },
   { to: "/company/bookings", icon: Dock, label: "Bookings" },
   { to: "/company/chats", icon: MessageSquare, label: "Chats" },
   { to: "/company/feedbacks", icon: ThumbsUp, label: "Feedbacks" },

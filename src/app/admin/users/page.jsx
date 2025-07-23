@@ -14,66 +14,74 @@ import React, { useState } from "react";
 export default function Users() {
     const { confirm } = useConfirmation();
     const [isPreview, setIsPreview] = useState(false);
-    const headers = ["Sl. No", "Name", "Email", "Address", "Action"];
+    const headers = ["Sl. No", "Name", "Email","Phone", "Address", "Action"];
 
-    const tableData = [
-        {
-            id: 1,
-            name: "Md. Abid",
-            img: PlaceholderImg(),
-            email: "abid.hossain@example.com",
-            address: "Dhanmondi Dhaka",
-        },
-        {
-            id: 2,
-            name: "Salma Akter",
-            img: PlaceholderImg(),
-            email: "salma.akter@example.com",
-            address: "Mirpur Dhaka",
-        },
-        {
-            id: 3,
-            name: "Rahim Uddin",
-            img: "/images/cleaner3.jpg",
-            email: "rahim.uddin@example.com",
-            address: "Lalbagh Dhaka",
-        },
-        {
-            id: 4,
-            name: "Nusrat Jahan",
-            img: "/images/cleaner4.jpg",
-            email: "nusrat.jahan@example.com",
-            address: "Gulshan Dhaka",
-        },
-        {
-            id: 5,
-            name: "Sakib Khan",
-            img: "/images/cleaner5.jpg",
-            email: "sakib.khan@example.com",
-            address: "Bashundhara Dhaka",
-        },
-        {
-            id: 6,
-            name: "Rima Sultana",
-            img: "/images/cleaner6.jpg",
-            email: "rima.sultana@example.com",
-            address: "Uttara Dhaka",
-        },
-        {
-            id: 7,
-            name: "Jamal Hossain",
-            img: "/images/cleaner7.jpg",
-            email: "jamal.hossain@example.com",
-            address: "Mohammadpur Dhaka",
-        },
-        {
-            id: 8,
-            name: "Lamia Hossain",
-            img: "/images/cleaner8.jpg",
-            email: "lamia.hossain@example.com",
-            address: "Rampura Dhaka",
-        },
-    ];
+  const tableData = [
+    {
+        id: 1,
+        name: "Md. Abid",
+        img: PlaceholderImg(),
+        email: "abid.hossain@example.com",
+        address: "Dhanmondi Dhaka",
+        phone: "+44 7700 900001"
+    },
+    {
+        id: 2,
+        name: "Salma Akter",
+        img: PlaceholderImg(),
+        email: "salma.akter@example.com",
+        address: "Mirpur Dhaka",
+        phone: "+44 7700 900002"
+    },
+    {
+        id: 3,
+        name: "Rahim Uddin",
+        img: "/images/cleaner3.jpg",
+        email: "rahim.uddin@example.com",
+        address: "Lalbagh Dhaka",
+        phone: "+44 7700 900003"
+    },
+    {
+        id: 4,
+        name: "Nusrat Jahan",
+        img: "/images/cleaner4.jpg",
+        email: "nusrat.jahan@example.com",
+        address: "Gulshan Dhaka",
+        phone: "+44 7700 900004"
+    },
+    {
+        id: 5,
+        name: "Sakib Khan",
+        img: "/images/cleaner5.jpg",
+        email: "sakib.khan@example.com",
+        address: "Bashundhara Dhaka",
+        phone: "+44 7700 900005"
+    },
+    {
+        id: 6,
+        name: "Rima Sultana",
+        img: "/images/cleaner6.jpg",
+        email: "rima.sultana@example.com",
+        address: "Uttara Dhaka",
+        phone: "+44 7700 900006"
+    },
+    {
+        id: 7,
+        name: "Jamal Hossain",
+        img: "/images/cleaner7.jpg",
+        email: "jamal.hossain@example.com",
+        address: "Mohammadpur Dhaka",
+        phone: "+44 7700 900007"
+    },
+    {
+        id: 8,
+        name: "Lamia Hossain",
+        img: "/images/cleaner8.jpg",
+        email: "lamia.hossain@example.com",
+        address: "Rampura Dhaka",
+        phone: "+44 7700 900008"
+    },
+];
 
 
     const handleDelete = async (id) => {
@@ -116,6 +124,7 @@ export default function Users() {
                                 </div>
                             </TableCell>
                             <TableCell>{item.email}</TableCell>
+                            <TableCell>{item.phone}</TableCell>
                             <TableCell>{item.address}</TableCell>
                             <TableCell className="flex gap-2">
                                 <div className="flex justify-center gap-2">
