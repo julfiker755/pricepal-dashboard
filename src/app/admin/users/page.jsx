@@ -177,6 +177,10 @@ export default function Users() {
                             <span>Reordered:</span>
                             <span className="text-black">3 times</span>
                         </div>
+                        <div className="flex justify-between">
+                            <span>Phone:</span>
+                            <span className="text-black">+44 7700 900001</span>
+                        </div>
                     </div>
                 </div>
             </Modal>
